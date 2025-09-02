@@ -1,5 +1,11 @@
-// Website Interactivity and Analytics
+// Website Interactivity and Dynamic Features
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Initialize countdown timer
+    initCountdownTimer();
+    
+    // Initialize course filtering
+    initCourseFiltering();
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -14,6 +20,77 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+// Countdown Timer Function
+function initCountdownTimer() {
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes'); 
+    const secondsEl = document.getElementById('seconds');
+    
+    if (!hoursEl || !minutesEl || !secondsEl) return;
+    
+    // Start with 23:45:12
+    let totalSeconds = 23 * 3600 + 45 * 60 + 12;
+    
+    function updateTimer() {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+        
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        } else {
+            // Reset to 23:59:59 when reaches 0
+            totalSeconds = 24 * 3600 - 1;
+        }
+    }
+    
+    updateTimer(); // Run once immediately
+    setInterval(updateTimer, 1000); // Then every second
+}
+
+// Course Filtering Function
+function initCourseFiltering() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filter = btn.getAttribute('data-filter');
+            
+            // Filter courses with animation
+            courseCards.forEach((card, index) => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                    setTimeout(() => {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        
+                        // Animate in
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    }, index * 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
 
     // Email form submission
     const emailForm = document.getElementById('emailForm');
