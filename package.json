@@ -1,0 +1,28 @@
+{
+  "name": "dr-emad-website",
+  "version": "1.0.0",
+  "description": "Professional Arabic mental health website for Dr. Emad Rashad",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m SimpleHTTPServer 8000",
+    "deploy": "vercel --prod",
+    "preview": "vercel"
+  },
+  "keywords": [
+    "mental-health",
+    "arabic",
+    "website",
+    "responsive",
+    "whatsapp",
+    "consultation"
+  ],
+  "author": "Creator Agency",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/dr-emad-website.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
