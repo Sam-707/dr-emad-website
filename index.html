@@ -3,126 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>د. عماد راشد - ثورة في علم النفس</title>
-    <meta name="description" content="تجربة ثورية في علم النفس مع د. عماد راشد">
+    <title>د. عماد راشد - أخصائي علم النفس</title>
+    <meta name="description" content="د. عماد راشد - أخصائي علم النفس معتمد. خدمات نفسية متخصصة وبرامج تطوير ذاتي فعالة لحياة أفضل">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Floating Navigation -->
+    <!-- Navigation -->
     <nav>
-        <div class="logo">د. عماد</div>
-        <ul>
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#courses">الكورسات</a></li>
-            <li><a href="#about">من أنا</a></li>
-            <li><a href="#contact">تواصل</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">د. عماد راشد</div>
+            <ul class="nav-menu">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتي</a></li>
+                <li><a href="#about">من أنا</a></li>
+                <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#contact">تواصل معي</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Revolutionary Hero Section -->
-    <section class="hero" id="hero">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        
-        <h1 class="hero-title" data-text="د. عماد راشد">د. عماد راشد</h1>
-        <p style="font-size: 1.5rem; margin-bottom: 2rem; text-align: center; max-width: 600px;">
-            <span class="holographic-text">ثورة في علم النفس</span><br>
-            تجربة تفاعلية تجمع بين العلم والتكنولوجيا
-        </p>
-        <a href="#courses" class="quantum-btn">اكتشف الرحلة 🚀</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>د. عماد راشد</h1>
+                <p class="subtitle">أخصائي علم النفس المعتمد - رحلتك نحو الصحة النفسية والنمو الشخصي تبدأ هنا</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">عميل سعيد</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">معدل الرضا</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">سنوات خبرة</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">احجز جلستك الآن</a>
+                    <a href="#services" class="btn btn-outline">اطلع على خدماتي</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="د. عماد راشد - أخصائي علم النفس" style="object-fit: cover; height: 400px;">
+            </div>
+        </div>
     </section>
 
-    <!-- Courses Section -->
-    <section class="section" id="courses">
-        <h2 class="section-title">الكورسات التحويلية</h2>
-        <div class="courses-grid">
-            <div class="course-card">
-                <h3 class="course-title">🧠 دبلوم التحليل النفسي الكمي</h3>
-                <p class="course-description">برنامج ثوري يدمج تقنيات التحليل النفسي التقليدية مع الذكاء الاصطناعي لخلق تجربة تحول شاملة</p>
-                <div style="margin: 20px 0;">
-                    <span style="background: var(--hologram-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">999 ريال</span>
-                    <span style="text-decoration: line-through; opacity: 0.6; margin-right: 10px;">499 ريال</span>
-                </div>
-                <a href="https://wa.me/966500000000?text=أريد الاشتراك في دبلوم التحليل النفسي الكمي" class="quantum-btn">انضم الآن</a>
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">خدماتي المتخصصة</h2>
+                <p class="section-subtitle">أقدم خدمات نفسية شاملة ومبنية على أحدث الأساليب العلمية لمساعدتك في تحقيق الرفاهية النفسية</p>
             </div>
-
-            <div class="course-card">
-                <h3 class="course-title">💝 العلاقات الصحية 3.0</h3>
-                <p class="course-description">تقنيات متقدمة لبناء علاقات مُثمرة باستخدام أحدث اكتشافات علم النفس التطبيقي</p>
-                <div style="margin: 20px 0;">
-                    <span style="background: var(--hologram-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">299 ريال</span>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3 class="service-title">جلسات العلاج النفسي الفردي</h3>
+                    <p class="service-description">جلسات علاج نفسي مخصصة لمعالجة القلق، الاكتئاب، والضغوط النفسية باستخدام أحدث التقنيات العلاجية المعتمدة</p>
+                    <div class="service-price">300 ريال / جلسة</div>
+                    <a href="https://wa.me/966500000000?text=أريد حجز جلسة علاج نفسي فردي مع د. عماد" class="btn btn-primary">احجز الآن</a>
                 </div>
-                <a href="https://wa.me/966500000000?text=أريد الاشتراك في كورس العلاقات الصحية 3.0" class="quantum-btn">ابدأ الرحلة</a>
-            </div>
 
-            <div class="course-card">
-                <h3 class="course-title">🌿 الشفاء الكمي</h3>
-                <p class="course-description">تقنيات الشفاء النفسي المتقدمة التي تدمج الطب النفسي الحديث مع الممارسات الشاملة</p>
-                <div style="margin: 20px 0;">
-                    <span style="background: var(--hologram-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">199 ريال</span>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3 class="service-title">العلاج الأسري والزواجي</h3>
+                    <p class="service-description">جلسات متخصصة لحل المشاكل الأسرية وتحسين التواصل بين الأزواج وأفراد الأسرة</p>
+                    <div class="service-price">400 ريال / جلسة</div>
+                    <a href="https://wa.me/966500000000?text=أريد حجز جلسة علاج أسري مع د. عماد" class="btn btn-primary">احجز الآن</a>
                 </div>
-                <a href="https://wa.me/966500000000?text=أريد الاشتراك في برنامج الشفاء الكمي" class="quantum-btn">ابدأ الشفاء</a>
+
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3 class="service-title">برامج التطوير الشخصي</h3>
+                    <p class="service-description">برامج تدريبية شاملة لتطوير الذات، بناء الثقة، وتحقيق الأهداف الشخصية والمهنية</p>
+                    <div class="service-price">من 500 ريال</div>
+                    <a href="https://wa.me/966500000000?text=أريد معرفة المزيد عن برامج التطوير الشخصي" class="btn btn-primary">اطلع على البرامج</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
-        <h2 class="section-title">رحلة التحول</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="testimonial-card">
-                <h3 class="holographic-text">البداية الثورية</h3>
-                <p>رحلة تحول من طبيب تقليدي إلى رائد في دمج التكنولوجيا مع علم النفس</p>
+    <section class="section about-section" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">من أنا</h2>
+                <p class="section-subtitle">التعرف على خبرتي ومؤهلاتي في مجال علم النفس</p>
             </div>
             
-            <div class="testimonial-card">
-                <h3 class="holographic-text">الابتكار العلمي</h3>
-                <p>تطوير منهجيات جديدة تدمج الذكاء الاصطناعي مع العلاج النفسي</p>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        د. عماد راشد، أخصائي علم النفس المعتمد مع أكثر من 5 سنوات من الخبرة في تقديم الخدمات النفسية والاستشارية. 
+                        حصلت على درجة الدكتوراه في علم النفس الإكلينيكي وأتخصص في علاج اضطرابات القلق، الاكتئاب، والضغوط النفسية.
+                    </p>
+                    
+                    <p class="about-text">
+                        أؤمن بأهمية تقديم الرعاية النفسية الشاملة والمبنية على الأدلة العلمية. أعمل مع كل عميل بشكل فردي لوضع خطة علاجية 
+                        مناسبة تساعده في تحقيق أهدافه وتحسين جودة حياته.
+                    </p>
+                    
+                    <div class="credentials">
+                        <div class="credential">
+                            <div class="credential-icon">🎓</div>
+                            <span>دكتوراه في علم النفس الإكلينيكي - جامعة الملك سعود</span>
+                        </div>
+                        <div class="credential">
+                            <div class="credential-icon">🏆</div>
+                            <span>عضو الجمعية السعودية لعلم النفس</span>
+                        </div>
+                        <div class="credential">
+                            <div class="credential-icon">📋</div>
+                            <span>ترخيص ممارسة من وزارة الصحة السعودية</span>
+                        </div>
+                        <div class="credential">
+                            <div class="credential-icon">💡</div>
+                            <span>متخصص في العلاج المعرفي السلوكي CBT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="مكتب د. عماد راشد" style="object-fit: cover; height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">آراء العملاء</h2>
+                <p class="section-subtitle">شاهد تجارب عملائي مع خدماتي النفسية والاستشارية</p>
             </div>
             
-            <div class="testimonial-card">
-                <h3 class="holographic-text">التأثير العالمي</h3>
-                <p>تغيير حياة أكثر من 50,000 شخص حول العالم من خلال منصات تعليمية متطورة</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        د. عماد ساعدني كثيراً في التغلب على نوبات القلق التي كنت أعاني منها. أسلوبه المهني والمتفهم جعلني أشعر بالراحة منذ الجلسة الأولى.
+                    </p>
+                    <div class="testimonial-author">- سارة أ.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        جلسات العلاج الأسري مع د. عماد أنقذت زواجي. تعلمنا كيف نتواصل بشكل أفضل وحلّينا مشاكلنا بطريقة صحية وإيجابية.
+                    </p>
+                    <div class="testimonial-author">- أحمد م.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        برنامج التطوير الشخصي غيّر حياتي تماماً. أصبحت أكثر ثقة بنفسي وقدرت أحقق أهدافي المهنية والشخصية. شكراً د. عماد.
+                    </p>
+                    <div class="testimonial-author">- منى س.</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="contact-section">
-            <h2 class="section-title">ابدأ رحلة التحول</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-                انضم لآلاف الأشخاص الذين غيروا حياتهم
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://wa.me/966500000000?text=مرحباً د. عماد، أريد معرفة المزيد عن برامجكم" class="quantum-btn">💬 واتساب فوري</a>
-                <a href="tel:+966500000000" class="quantum-btn">📞 مكالمة مجانية</a>
+    <section class="section contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">ابدأ رحلتك نحو الصحة النفسية</h2>
+                <p class="section-subtitle">تواصل معي اليوم لحجز جلستك الأولى أو للاستفسار عن خدماتي</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <a href="https://wa.me/966500000000?text=مرحباً د. عماد، أريد حجز جلسة استشارة نفسية" class="btn">💬 تواصل عبر الواتساب</a>
+                <a href="tel:+966500000000" class="btn">📞 اتصل بي مباشرة</a>
+                <a href="mailto:dr.emad@email.com" class="btn">✉️ راسلني إلكترونياً</a>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px;">
+                <h3 style="margin-bottom: 1rem;">معلومات العيادة</h3>
+                <p>📍 الرياض، المملكة العربية السعودية</p>
+                <p>🕒 السبت - الخميس: 9:00 صباحاً - 8:00 مساءً</p>
+                <p>💡 جلسات أونلاين متاحة</p>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px 20px; opacity: 0.6;">
-        © 2024 د. عماد راشد - تجربة مستقبلية في التطوير النفسي
+    <!-- Footer -->
+    <footer>
+        <div class="section-container">
+            <p>&copy; 2024 د. عماد راشد - أخصائي علم النفس المعتمد. جميع الحقوق محفوظة.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">ترخيص وزارة الصحة رقم: PSY-2024-001</p>
+        </div>
     </footer>
 
     <script>
-        // Simple smooth scrolling
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Add loading class removal
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
