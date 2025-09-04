@@ -54,7 +54,9 @@
             </div>
             
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="د. عماد راشد - أخصائي علم النفس" style="object-fit: cover; height: 400px;">
+                <div style="width: 100%; max-width: 400px; height: 400px; background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; text-align: center; box-shadow: var(--shadow-large);">
+                    📸<br>صورة د. عماد راشد<br><small style="font-size: 0.9rem; opacity: 0.8;">سيتم إضافة الصورة الشخصية</small>
+                </div>
             </div>
         </div>
     </section>
@@ -136,7 +138,9 @@
                 </div>
                 
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="مكتب د. عماد راشد" style="object-fit: cover; height: 400px;">
+                    <div style="width: 100%; max-width: 400px; height: 400px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 2px solid #2563eb; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #2563eb; font-size: 1.2rem; text-align: center; box-shadow: var(--shadow-large);">
+                        🏥<br>مكتب د. عماد راشد<br><small style="font-size: 0.9rem; opacity: 0.8;">سيتم إضافة صورة المكتب</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -199,6 +203,13 @@
     </section>
 
     <!-- Footer -->
+    <!-- Note for Dr. Emad -->
+    <div style="position: fixed; bottom: 20px; left: 20px; background: #2563eb; color: white; padding: 1rem; border-radius: 10px; font-size: 0.9rem; max-width: 300px; box-shadow: var(--shadow-large); z-index: 1000;" id="photo-note">
+        <strong>ملاحظة لد. عماد:</strong><br>
+        يرجى إضافة صورتك الشخصية وصورة المكتب لإكمال الموقع.<br>
+        <button onclick="document.getElementById('photo-note').style.display='none'" style="background: white; color: #2563eb; border: none; padding: 0.5rem 1rem; border-radius: 5px; margin-top: 0.5rem; cursor: pointer;">فهمت ✓</button>
+    </div>
+
     <footer>
         <div class="section-container">
             <p>&copy; 2024 د. عماد راشد - أخصائي علم النفس المعتمد. جميع الحقوق محفوظة.</p>
