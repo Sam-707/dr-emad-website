@@ -3,699 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>د. عماد راشد - أكاديمية التطوير النفسي | كورسات تغير حياتك</title>
-    <meta name="description" content="اكتشف كورسات د. عماد راشد المتخصصة في علاج الإدمان، التطوير الذاتي والشفاء النفسي. أكثر من 50,000 طالب حول العالم غيروا حياتهم معنا">
+    <title>د. عماد راشد - ثورة في علم النفس | تجربة تفاعلية</title>
+    <meta name="description" content="انغمس في تجربة تعليمية ثورية مع د. عماد راشد. تقنيات الذكاء الاصطناعي تلتقي بعلم النفس الحديث">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero">
-        <nav class="nav-container">
-            <div class="logo">د. عماد راشد</div>
-            <ul class="nav-menu">
-                <li><a href="#about">نبذة عني</a></li>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#testimonials">آراء العملاء</a></li>
-                <li><a href="#contact" class="cta-nav">احجز استشارة</a></li>
-            </ul>
-        </nav>
+    <div id="preloader" class="preloader">
+        <div class="loader-container">
+            <div class="neural-network">
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="connection"></div>
+            </div>
+            <div class="loading-text">جاري تحميل التجربة...</div>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav" id="navbar">
+        <div class="nav-blur"></div>
+        <div class="logo holographic">د. عماد</div>
+        <ul class="nav-menu">
+            <li><a href="#hero" class="nav-item active">الرئيسية</a></li>
+            <li><a href="#courses" class="nav-item">الكورسات</a></li>
+            <li><a href="#about" class="nav-item">من أنا</a></li>
+            <li><a href="#testimonials" class="nav-item">القصص</a></li>
+            <li><a href="#contact" class="nav-item cta-nav">ابدأ الآن</a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+    </nav>
+
+    <!-- Revolutionary Hero Section -->
+    <section class="hero immersive" id="hero">
+        <div class="hero-background">
+            <canvas id="particles-canvas"></canvas>
+            <div class="cosmic-dust"></div>
+            <div class="floating-orbs">
+                <div class="orb orb-1" data-speed="0.5"></div>
+                <div class="orb orb-2" data-speed="0.3"></div>
+                <div class="orb orb-3" data-speed="0.7"></div>
+            </div>
+            <div class="neural-connections">
+                <svg class="connections-svg">
+                    <g class="connections-group"></g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-content" data-parallax>
+            <div class="hero-badge quantum-badge">
+                <span class="badge-icon">🧬</span>
+                <span class="badge-text">تقنية نفسية ثورية</span>
+                <div class="badge-glow"></div>
+            </div>
+            
+            <h1 class="hero-title dimensional">
+                <span class="title-layer" data-text="د. عماد راشد">د. عماد راشد</span>
+                <span class="title-shadow">د. عماد راشد</span>
+                <div class="title-distortion"></div>
+            </h1>
+            
+            <div class="hero-subtitle-container">
+                <p class="hero-subtitle hologram-text">
+                    <span class="subtitle-word">رحلة</span>
+                    <span class="subtitle-word">تحويلية</span>
+                    <span class="subtitle-word">نحو</span>
+                    <span class="subtitle-word">الوعي</span>
+                    <span class="subtitle-word">الأعلى</span>
+                </p>
+                <div class="subtitle-enhancement">
+                    عالم نفسي يدمج الذكاء الاصطناعي مع علم النفس لخلق تجارب شفاء لا مثيل لها
+                </div>
+            </div>
+
+            <!-- Revolutionary Stats Dashboard -->
+            <div class="stats-dashboard">
+                <div class="dashboard-container">
+                    <div class="stat-hologram" data-stat="50000">
+                        <div class="hologram-display">
+                            <div class="stat-number" id="followers-count">0</div>
+                            <div class="stat-unit">متدرب</div>
+                        </div>
+                        <div class="stat-beam"></div>
+                    </div>
+                    
+                    <div class="stat-hologram" data-stat="98">
+                        <div class="hologram-display">
+                            <div class="stat-number" id="success-rate">0</div>
+                            <div class="stat-unit">% نجاح</div>
+                        </div>
+                        <div class="stat-beam"></div>
+                    </div>
+                    
+                    <div class="stat-hologram" data-stat="15">
+                        <div class="hologram-display">
+                            <div class="stat-number" id="experience">0</div>
+                            <div class="stat-unit">سنة خبرة</div>
+                        </div>
+                        <div class="stat-beam"></div>
+                    </div>
+                </div>
+                <div class="dashboard-grid"></div>
+            </div>
+
+            <!-- Next-Gen CTA Buttons -->
+            <div class="hero-actions">
+                <button class="btn-quantum primary" id="start-journey">
+                    <span class="btn-content">
+                        <span class="btn-icon">🚀</span>
+                        <span class="btn-text">ابدأ رحلتك الآن</span>
+                    </span>
+                    <div class="quantum-field"></div>
+                    <div class="btn-particles"></div>
+                </button>
+                
+                <button class="btn-quantum secondary" id="watch-story">
+                    <span class="btn-content">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">شاهد القصة</span>
+                    </span>
+                    <div class="glass-layer"></div>
+                </button>
+            </div>
+
+            <!-- Immersive Scroll Indicator -->
+            <div class="scroll-portal">
+                <div class="portal-ring"></div>
+                <div class="portal-inner">
+                    <div class="scroll-arrow"></div>
+                </div>
+                <div class="portal-text">اكتشف المزيد</div>
+            </div>
+        </div>
+
+        <!-- Interactive Elements -->
+        <div class="hero-interactions">
+            <div class="floating-thoughts">
+                <div class="thought-bubble" data-thought="تحرر من القيود">💭</div>
+                <div class="thought-bubble" data-thought="اكتشف إمكانياتك">✨</div>
+                <div class="thought-bubble" data-thought="غير حياتك">🌟</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revolutionary AI-Powered Course Section -->
+    <section id="courses" class="courses-universe">
+        <div class="universe-background">
+            <canvas id="cosmic-canvas"></canvas>
+            <div class="constellation-layer"></div>
+        </div>
         
-        <div class="hero-content">
-            <div class="hero-badge">مؤلف أحببت وغدًا</div>
-            <h1 class="hero-title">د. عماد راشد</h1>
-            <p class="hero-subtitle">طبيب نفسي ومؤلف متخصص في التحليل النفسي وعلاج الإدمان. خبرة +15 سنة في مساعدة الآلاف على الشفاء النفسي.</p>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">71K+</div>
-                    <div class="stat-label">متابع</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">+100K</div>
-                    <div class="stat-label">كتاب مباع</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">سنة خبرة</div>
-                </div>
-            </div>
-            
-            <div class="hero-cta">
-                <a href="#courses" class="btn-primary">استكشف الكورسات</a>
-                <a href="#free-guide" class="btn-secondary">احصل على الدليل المجاني</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">من هو د. عماد راشد؟</span>
-                <h2>الطبيب النفسي الذي غير حياة الآلاف</h2>
-                <p class="section-subtitle">مؤلف كتب "أحببت وغدًا" و "أبي الذي أكره" - الأكثر مبيعًا في الوطن العربي</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-story">
-                    <div class="story-card">
-                        <h3>🧠 رحلة في عمق النفس البشرية</h3>
-                        <p>طبيب نفسي وكاتب وروائي مصري متخصص في <strong>التحليل النفسي</strong> والعلاج من العلاقات المدمرة والإدمان. خبرة +15 سنة في مساعدة الأشخاص على اكتشاف أنفسهم الحقيقية.</p>
-                    </div>
-                    
-                    <div class="story-card">
-                        <h3>📚 كاتب ومفكر مؤثر</h3>
-                        <p>مهتم بالأدب والفلسفة واللسانيات والأنثروبولوجيا. كتبه تحول قراءة المشاعر الإنسانية إلى خريطة طريق نحو <strong>الشفاء النفسي الحقيقي</strong>.</p>
-                    </div>
-                    
-                    <div class="story-card highlight">
-                        <h3>🎯 لماذا يختلف د. عماد؟</h3>
-                        <p>لا يكتفي بالعلاج التقليدي - بل يجمع بين العلم النفسي والفلسفة والأدب ليساعدك على فهم <strong>جذور مشاكلك</strong> وليس أعراضها فقط.</p>
-                    </div>
-                </div>
-
-                <div class="expertise-grid">
-                    <div class="expertise-item">
-                        <div class="expertise-icon">🔬</div>
-                        <h4>التحليل النفسي العميق</h4>
-                        <p>فهم الأسباب الجذرية وراء الأنماط النفسية المدمرة</p>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="expertise-icon">💔</div>
-                        <h4>علاج العلاقات المؤذية</h4>
-                        <p>التحرر من دورات الألم العاطفي والعلاقات السامة</p>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="expertise-icon">🌟</div>
-                        <h4>اكتشاف الذات الأصيلة</h4>
-                        <p>الوصول لحياة أكثر أصالة ومعنى حقيقي</p>
-                    </div>
-                    
-                    <div class="expertise-item">
-                        <div class="expertise-icon">🔄</div>
-                        <h4>علاج الإدمان النفسي</h4>
-                        <p>التحرر من الأنماط الإدمانية والسلوكيات الضارة</p>
-                    </div>
-                </div>
-
-                <div class="impact-numbers">
-                    <div class="impact-stat">
-                        <span class="impact-number">71,000+</span>
-                        <span class="impact-label">متابع يثق بخبرته</span>
-                    </div>
-                    <div class="impact-stat">
-                        <span class="impact-number">5</span>
-                        <span class="impact-label">كتب غيرت حياة القراء</span>
-                    </div>
-                    <div class="impact-stat">
-                        <span class="impact-number">15+</span>
-                        <span class="impact-label">سنة في العلاج النفسي</span>
-                    </div>
-                    <div class="impact-stat">
-                        <span class="impact-number">3,000+</span>
-                        <span class="impact-label">حالة شفاء موثقة</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">الكورسات الأكثر تأثيراً</span>
-                <h2>منهجية التحول النفسي المثبتة علمياً</h2>
-                <p class="section-subtitle">كورسات شاملة مصممة خصيصاً لتحقيق تحول جذري في حياتك - من الشفاء النفسي إلى الإنجاز الشخصي</p>
-            </div>
-            
-            <div class="courses-filter">
-                <button class="filter-btn active" data-filter="all">جميع الكورسات</button>
-                <button class="filter-btn" data-filter="bestseller">الأكثر مبيعاً</button>
-                <button class="filter-btn" data-filter="recovery">علاج الإدمان</button>
-                <button class="filter-btn" data-filter="relationships">العلاقات</button>
-                <button class="filter-btn" data-filter="development">التطوير الذاتي</button>
-            </div>
-            
-            <div class="courses-grid">
-                <!-- Course 1: Breaking the Pain Cycle -->
-                <div class="course-card featured bestseller recovery" data-category="bestseller recovery">
-                    <div class="course-ribbon">
-                        <span class="ribbon-text">🔥 الأكثر مبيعاً</span>
-                    </div>
-                    <div class="course-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23667eea'/><text x='200' y='125' text-anchor='middle' dy='0.3em' font-family='Arial' font-size='24' fill='white'>🧠 كسر دورة الألم</text></svg>" alt="كسر دورة الألم" />
-                        <div class="course-level">متقدم</div>
-                        <div class="course-duration">12 ساعة</div>
-                    </div>
-                    
-                    <div class="course-content">
-                        <div class="course-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">(4.89) • 8,547 طالب</span>
-                        </div>
-                        
-                        <h3>كسر دورة الألم النفسي</h3>
-                        <p class="course-description">البرنامج الشامل للتحرر من الأنماط النفسية المدمرة والعلاقات السامة - مستوحى من كتاب "أحببت وغدًا"</p>
-                        
-                        <div class="course-highlights">
-                            <div class="highlight">✓ 15 فيديو تفاعلي عالي الجودة</div>
-                            <div class="highlight">✓ ورش عمل عملية لكسر الأنماط</div>
-                            <div class="highlight">✓ خطة شفاء مخصصة 90 يوم</div>
-                            <div class="highlight">✓ مجتمع دعم حصري</div>
-                        </div>
-                        
-                        <div class="course-instructor">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='%232c5aa0'/><text x='25' y='30' text-anchor='middle' font-family='Arial' font-size='16' fill='white'>د.ع</text></svg>" alt="د. عماد راشد" class="instructor-image" />
-                            <div class="instructor-info">
-                                <span class="instructor-name">د. عماد راشد</span>
-                                <span class="instructor-title">خبير التحليل النفسي</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-footer">
-                        <div class="course-pricing">
-                            <span class="original-price">$299</span>
-                            <span class="current-price">$149</span>
-                            <span class="discount-badge">خصم محدود</span>
-                        </div>
-                        <a href="#enrollment" class="btn-enroll featured">سجل الآن</a>
-                    </div>
-                </div>
-
-                <!-- Course 2: Addiction Recovery -->
-                <div class="course-card recovery" data-category="recovery">
-                    <div class="course-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23764ba2'/><text x='200' y='125' text-anchor='middle' dy='0.3em' font-family='Arial' font-size='20' fill='white'>🚫 علاج الإدمان</text></svg>" alt="علاج الإدمان" />
-                        <div class="course-level">متقدم</div>
-                        <div class="course-duration">16 ساعة</div>
-                    </div>
-                    
-                    <div class="course-content">
-                        <div class="course-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">(4.91) • 6,234 طالب</span>
-                        </div>
-                        
-                        <h3>برنامج التحرر من الإدمان</h3>
-                        <p class="course-description">منهجية علمية شاملة للتخلص من جميع أنواع الإدمان - من المواد إلى السلوكيات الضارة</p>
-                        
-                        <div class="course-highlights">
-                            <div class="highlight">✓ تشخيص أسباب الإدمان الجذرية</div>
-                            <div class="highlight">✓ خطة إعادة تأهيل متدرجة</div>
-                            <div class="highlight">✓ تقنيات منع الانتكاس</div>
-                            <div class="highlight">✓ دعم نفسي مستمر</div>
-                        </div>
-                        
-                        <div class="course-instructor">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='%232c5aa0'/><text x='25' y='30' text-anchor='middle' font-family='Arial' font-size='16' fill='white'>د.ع</text></svg>" alt="د. عماد راشد" class="instructor-image" />
-                            <div class="instructor-info">
-                                <span class="instructor-name">د. عماد راشد</span>
-                                <span class="instructor-title">متخصص علاج الإدمان</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-footer">
-                        <div class="course-pricing">
-                            <span class="current-price">$199</span>
-                        </div>
-                        <a href="#enrollment" class="btn-enroll">سجل الآن</a>
-                    </div>
-                </div>
-
-                <!-- Course 3: Healthy Relationships -->
-                <div class="course-card relationships" data-category="relationships">
-                    <div class="course-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23f093fb'/><text x='200' y='125' text-anchor='middle' dy='0.3em' font-family='Arial' font-size='20' fill='white'>💕 العلاقات الصحية</text></svg>" alt="العلاقات الصحية" />
-                        <div class="course-level">متوسط</div>
-                        <div class="course-duration">10 ساعات</div>
-                    </div>
-                    
-                    <div class="course-content">
-                        <div class="course-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">(4.85) • 12,891 طالب</span>
-                        </div>
-                        
-                        <h3>بناء العلاقات الصحية</h3>
-                        <p class="course-description">دليلك الشامل لفهم ديناميكية العلاقات وبناء روابط عاطفية صحية ومستدامة</p>
-                        
-                        <div class="course-highlights">
-                            <div class="highlight">✓ فهم أنماط التعلق العاطفي</div>
-                            <div class="highlight">✓ كيفية وضع حدود صحية</div>
-                            <div class="highlight">✓ تطوير التواصل الفعال</div>
-                            <div class="highlight">✓ علامات العلاقات السامة</div>
-                        </div>
-                        
-                        <div class="course-instructor">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='%232c5aa0'/><text x='25' y='30' text-anchor='middle' font-family='Arial' font-size='16' fill='white'>د.ع</text></svg>" alt="د. عماد راشد" class="instructor-image" />
-                            <div class="instructor-info">
-                                <span class="instructor-name">د. عماد راشد</span>
-                                <span class="instructor-title">خبير العلاقات</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-footer">
-                        <div class="course-pricing">
-                            <span class="current-price">$89</span>
-                        </div>
-                        <a href="#enrollment" class="btn-enroll">سجل الآن</a>
-                    </div>
-                </div>
-
-                <!-- Course 4: Self Development Mastery -->
-                <div class="course-card development bestseller" data-category="development bestseller">
-                    <div class="course-ribbon">
-                        <span class="ribbon-text">⭐ الأعلى تقييماً</span>
-                    </div>
-                    <div class="course-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%2343cea2'/><text x='200' y='125' text-anchor='middle' dy='0.3em' font-family='Arial' font-size='18' fill='white'>🎯 إتقان تطوير الذات</text></svg>" alt="إتقان تطوير الذات" />
-                        <div class="course-level">شامل</div>
-                        <div class="course-duration">20 ساعة</div>
-                    </div>
-                    
-                    <div class="course-content">
-                        <div class="course-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">(4.92) • 15,672 طالب</span>
-                        </div>
-                        
-                        <h3>إتقان فن تطوير الذات</h3>
-                        <p class="course-description">البرنامج الأكثر شمولية للتطوير الشخصي - من اكتشاف الهوية إلى تحقيق الإنجازات العظيمة</p>
-                        
-                        <div class="course-highlights">
-                            <div class="highlight">✓ اكتشاف الهدف الحقيقي من الحياة</div>
-                            <div class="highlight">✓ بناء العادات الإيجابية</div>
-                            <div class="highlight">✓ تطوير الثقة بالنفس</div>
-                            <div class="highlight">✓ استراتيجيات النجاح المهني</div>
-                        </div>
-                        
-                        <div class="course-instructor">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='%232c5aa0'/><text x='25' y='30' text-anchor='middle' font-family='Arial' font-size='16' fill='white'>د.ع</text></svg>" alt="د. عماد راشد" class="instructor-image" />
-                            <div class="instructor-info">
-                                <span class="instructor-name">د. عماد راشد</span>
-                                <span class="instructor-title">خبير التطوير الشخصي</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-footer">
-                        <div class="course-pricing">
-                            <span class="current-price">$179</span>
-                        </div>
-                        <a href="#enrollment" class="btn-enroll">سجل الآن</a>
-                    </div>
-                </div>
-
-                <!-- Course 5: Mindfulness & Focus -->
-                <div class="course-card development" data-category="development">
-                    <div class="course-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23fa709a'/><text x='200' y='125' text-anchor='middle' dy='0.3em' font-family='Arial' font-size='16' fill='white'>🧘‍♂️ اليقظة الذهنية والتركيز</text></svg>" alt="اليقظة الذهنية" />
-                        <div class="course-level">مبتدئ</div>
-                        <div class="course-duration">8 ساعات</div>
-                    </div>
-                    
-                    <div class="course-content">
-                        <div class="course-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">(4.87) • 9,543 طالب</span>
-                        </div>
-                        
-                        <h3>اليقظة الذهنية والتركيز العميق</h3>
-                        <p class="course-description">تعلم تقنيات الـ Mindfulness والتأمل لتحسين التركيز والوضوح الذهني في عصر الإلهاءات</p>
-                        
-                        <div class="course-highlights">
-                            <div class="highlight">✓ تقنيات التأمل الحديثة</div>
-                            <div class="highlight">✓ تمارين اليقظة الذهنية</div>
-                            <div class="highlight">✓ إدارة التوتر والقلق</div>
-                            <div class="highlight">✓ تحسين جودة النوم</div>
-                        </div>
-                        
-                        <div class="course-instructor">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='%232c5aa0'/><text x='25' y='30' text-anchor='middle' font-family='Arial' font-size='16' fill='white'>د.ع</text></svg>" alt="د. عماد راشد" class="instructor-image" />
-                            <div class="instructor-info">
-                                <span class="instructor-name">د. عماد راشد</span>
-                                <span class="instructor-title">معالج اليقظة الذهنية</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-footer">
-                        <div class="course-pricing">
-                            <span class="current-price">$99</span>
-                        </div>
-                        <a href="#enrollment" class="btn-enroll">سجل الآن</a>
-                    </div>
-                </div>
-
-                <!-- Course 6: Critical Thinking -->
-                <div class="course-card development" data-category="development">
-                    <div class="course-image">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23667eea'/><text x='200' y='125' text-anchor='middle' dy='0.3em' font-family='Arial' font-size='20' fill='white'>🤔 التفكير النقدي</text></svg>" alt="التفكير النقدي" />
-                        <div class="course-level">متوسط</div>
-                        <div class="course-duration">12 ساعة</div>
-                    </div>
-                    
-                    <div class="course-content">
-                        <div class="course-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">(4.83) • 7,892 طالب</span>
-                        </div>
-                        
-                        <h3>إتقان التفكير النقدي</h3>
-                        <p class="course-description">طور مهارات التحليل والاستنتاج المنطقي لاتخاذ قرارات أفضل في الحياة والعمل</p>
-                        
-                        <div class="course-highlights">
-                            <div class="highlight">✓ أسس المنطق والاستدلال</div>
-                            <div class="highlight">✓ تحليل المعلومات بدقة</div>
-                            <div class="highlight">✓ تجنب الأخطاء المعرفية</div>
-                            <div class="highlight">✓ حل المشكلات المعقدة</div>
-                        </div>
-                        
-                        <div class="course-instructor">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='%232c5aa0'/><text x='25' y='30' text-anchor='middle' font-family='Arial' font-size='16' fill='white'>د.ع</text></svg>" alt="د. عماد راشد" class="instructor-image" />
-                            <div class="instructor-info">
-                                <span class="instructor-name">د. عماد راشد</span>
-                                <span class="instructor-title">خبير التفكير النقدي</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-footer">
-                        <div class="course-pricing">
-                            <span class="current-price">$179</span>
-                        </div>
-                        <a href="#enrollment" class="btn-enroll">سجل الآن</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Bundles -->
-            <div class="course-bundles">
-                <div class="bundle-card master-bundle">
-                    <div class="bundle-header">
-                        <div class="bundle-badge">💎 باقة شاملة</div>
-                        <h3>الباقة الذهبية للتحول الشامل</h3>
-                        <p>احصل على جميع الكورسات + جلسات تطبيقية مع د. عماد شخصياً</p>
-                    </div>
-                    
-                    <div class="bundle-content">
-                        <div class="bundle-includes">
-                            <div class="include-item">✅ جميع الكورسات الـ 12 (قيمة $2,400)</div>
-                            <div class="include-item">✅ 6 جلسات فردية مع د. عماد (قيمة $1,800)</div>
-                            <div class="include-item">✅ وصول مدى الحياة + التحديثات</div>
-                            <div class="include-item">✅ مجتمع VIP حصري</div>
-                            <div class="include-item">✅ شهادات معتمدة</div>
-                            <div class="include-item">✅ دعم أولوية 24/7</div>
-                        </div>
-                        
-                        <div class="bundle-pricing">
-                            <span class="bundle-original">$1,200</span>
-                            <span class="bundle-price">$399</span>
-                            <span class="bundle-save">توفير $801</span>
-                        </div>
-                        
-                        <a href="#master-bundle" class="btn-bundle">احصل على الباقة الذهبية</a>
-                        <p class="bundle-guarantee">💰 ضمان استرداد 60 يوم</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section">
-        <div class="container">
-            <h2>كيف تبدأ رحلتك نحو الصحة النفسية؟</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>احجز موعدك</h3>
-                    <p>اختر الوقت المناسب لك عبر نظام الحجز الإلكتروني</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>الجلسة الأولى</h3>
-                    <p>جلسة تعارف وتقييم شامل لوضعك النفسي</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>خطة العلاج</h3>
-                    <p>وضع خطة علاجية مخصصة تناسب احتياجاتك</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>المتابعة المستمرة</h3>
-                    <p>جلسات منتظمة ودعم مستمر حتى تحقيق أهدافك</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Authority & Trust Section -->
-    <section id="authority" class="authority-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">لماذا يثق بي آلاف الناس؟</span>
-                <h2>سجل حافل في تحويل الحياة</h2>
-                <p class="section-subtitle">أكثر من 15 عامًا في مساعدة الناس على كسر دورات الألم النفسي وبناء حياة أكثر أصالة</p>
-            </div>
-            
-            <div class="authority-content">
-                <!-- Real Credentials -->
-                <div class="credentials-showcase">
-                    <div class="credential-card">
-                        <div class="credential-image">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23f8f9fa'/><rect x='20' y='20' width='260' height='160' fill='white' stroke='%23ddd'/><text x='150' y='80' text-anchor='middle' font-size='14' fill='%23333'>📖</text><text x='150' y='110' text-anchor='middle' font-size='12' fill='%23666'>أحببت وغدًا</text><text x='150' y='130' text-anchor='middle' font-size='10' fill='%23999'>أكثر من 100,000 نسخة مباعة</text></svg>" alt="كتاب أحببت وغدًا" />
-                        </div>
-                        <div class="credential-info">
-                            <h4>مؤلف "أحببت وغدًا"</h4>
-                            <p>الكتاب الأكثر تأثيراً في العالم العربي حول العلاقات المدمرة والشفاء النفسي</p>
-                            <div class="credential-stats">
-                                <span class="stat">📚 +100,000 نسخة مباعة</span>
-                                <span class="stat">⭐ تقييم 4.8/5 على جوودريدز</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="credential-card">
-                        <div class="credential-image">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23f8f9fa'/><rect x='20' y='20' width='260' height='160' fill='white' stroke='%23ddd'/><text x='150' y='80' text-anchor='middle' font-size='14' fill='%23333'>📖</text><text x='150' y='110' text-anchor='middle' font-size='12' fill='%23666'>أبي الذي أكره</text><text x='150' y='130' text-anchor='middle' font-size='10' fill='%23999'>كتاب مؤثر في العلاج النفسي</text></svg>" alt="كتاب أبي الذي أكره" />
-                        </div>
-                        <div class="credential-info">
-                            <h4>مؤلف "أبي الذي أكره"</h4>
-                            <p>دليل شامل لفهم تأثير العلاقات الأسرية على الصحة النفسية والعلاقات</p>
-                            <div class="credential-stats">
-                                <span class="stat">🏆 من أفضل الكتب العربية في علم النفس</span>
-                                <span class="stat">💬 آلاف التعليقات الإيجابية</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Social Media Authority -->
-                <div class="social-authority">
-                    <div class="social-platform">
-                        <div class="platform-icon">📷</div>
-                        <div class="platform-info">
-                            <h4>Instagram: @dr.emad.rashad</h4>
-                            <p>71,000+ متابع نشط يتفاعل مع محتوى يومي حول الصحة النفسية</p>
-                            <a href="https://instagram.com/dr.emad.rashad" target="_blank" class="social-link">زوروا الصفحة</a>
-                        </div>
-                    </div>
-                    
-                    <div class="social-platform">
-                        <div class="platform-icon">📺</div>
-                        <div class="platform-info">
-                            <h4>YouTube: قناة د. عماد راشد</h4>
-                            <p>محتوى تعليمي أسبوعي حول التطوير الذاتي والعلاج النفسي</p>
-                            <a href="https://youtube.com/@dr.emad.rashad" target="_blank" class="social-link">شاهدوا القناة</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Real Testimonial Snippet -->
-                <div class="featured-testimonial">
-                    <div class="testimonial-content">
-                        <blockquote>"د. عماد راشد غيّر حياتي من خلال كتابه 'أحببت وغدًا'. أسلوبه البسيط والعميق في نفس الوقت ساعدني أفهم أنماط العلاقات المدمرة اللي كنت واقعة فيها سنين."</blockquote>
-                        <div class="testimonial-author">
-                            <span class="author-note">من تعليق حقيقي على Instagram</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Trust Badges -->
-                <div class="trust-badges">
-                    <div class="trust-badge">
-                        <div class="badge-icon">🏥</div>
-                        <div class="badge-text">
-                            <strong>طبيب نفسي مرخص</strong>
-                            <span>15+ سنة خبرة سريرية</span>
-                        </div>
-                    </div>
-                    <div class="trust-badge">
-                        <div class="badge-icon">🎓</div>
-                        <div class="badge-text">
-                            <strong>متخصص في علاج الإدمان</strong>
-                            <span>شهادات معتمدة دولياً</span>
-                        </div>
-                    </div>
-                    <div class="trust-badge">
-                        <div class="badge-icon">📊</div>
-                        <div class="badge-text">
-                            <strong>نتائج موثقة</strong>
-                            <span>آلاف الحالات الناجحة</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lead Magnet Section -->
-    <section class="lead-magnet-section">
-        <div class="container">
-            <div class="lead-magnet-content">
-                <div class="magnet-visual">
-                    <div class="book-mockup">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect width='300' height='400' fill='%23667eea'/><rect x='20' y='30' width='260' height='340' fill='white'/><text x='150' y='80' text-anchor='middle' font-size='16' fill='%23333'>د. عماد راشد</text><text x='150' y='180' text-anchor='middle' font-size='20' fill='%23667eea' font-weight='bold'>دليل الشفاء</text><text x='150' y='200' text-anchor='middle' font-size='20' fill='%23667eea' font-weight='bold'>من العلاقات</text><text x='150' y='220' text-anchor='middle' font-size='20' fill='%23667eea' font-weight='bold'>السامة</text><text x='150' y='280' text-anchor='middle' font-size='14' fill='%23666'>30 صفحة من الحلول العملية</text><text x='150' y='320' text-anchor='middle' font-size='12' fill='%23999'>قيمة الكتاب: 99$</text></svg>" alt="دليل الشفاء من العلاقات السامة" />
-                    </div>
+            <div class="section-header cosmic-header">
+                <div class="header-constellation">
+                    <span class="section-badge holographic-badge">
+                        <span class="badge-particle">⚡</span>
+                        الكورسات التحويلية
+                        <div class="badge-aurora"></div>
+                    </span>
                 </div>
                 
-                <div class="magnet-info">
-                    <div class="magnet-badge">🎁 مجاني تماماً</div>
-                    <h2>دليل الشفاء من العلاقات السامة</h2>
-                    <p class="magnet-subtitle">الدليل الذي استفاد منه أكثر من 25,000 شخص لكسر دورة الألم العاطفي</p>
-                    
-                    <div class="magnet-benefits">
-                        <h4>ما ستحصل عليه:</h4>
-                        <ul class="benefits-list">
-                            <li>✅ كيف تكتشف العلاقات السامة في حياتك</li>
-                            <li>✅ 7 خطوات عملية للتحرر من الأنماط المدمرة</li>
-                            <li>✅ تقنيات الحماية النفسية المثبتة علمياً</li>
-                            <li>✅ خطة عمل 30 يوم للشفاء التدريجي</li>
-                            <li>✅ نصائح خاصة مستوحاة من "أحببت وغدًا"</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="magnet-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">25,000+</span>
-                            <span class="stat-label">شخص استفاد</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">30</span>
-                            <span class="stat-label">صفحة محتوى</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">$99</span>
-                            <span class="stat-label">القيمة الحقيقية</span>
-                        </div>
-                    </div>
-                    
-                    <form class="lead-form" id="leadMagnetForm">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="الاسم الكريم" required>
-                            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-                        </div>
-                        <button type="submit" class="btn-lead-magnet">
-                            📖 حمل الدليل مجاناً الآن
-                        </button>
-                        <p class="form-privacy">
-                            🔒 نحترم خصوصيتك - لن نرسل لك إلا محتوى قيم
-                        </p>
-                    </form>
-                    
-                    <div class="social-proof-mini">
-                        <p><strong>"أفضل دليل قرأته عن العلاقات السامة. غير نظرتي للحياة تماماً"</strong></p>
-                        <span>- سارة أ. من متابعي د. عماد</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section id="booking" class="booking-section">
-        <div class="container">
-            <h2>احجز استشارتك الآن</h2>
-            <div class="booking-content">
-                <div class="booking-benefits">
-                    <h3>لماذا تختار د. عماد راشد؟</h3>
-                    <ul>
-                        <li>✓ خبرة +10 سنوات في العلاج النفسي</li>
-                        <li>✓ جلسات أونلاين مرنة تناسب وقتك</li>
-                        <li>✓ سرية تامة وخصوصية مضمونة</li>
-                        <li>✓ متابعة مستمرة بين الجلسات</li>
-                        <li>✓ خطط علاجية مخصصة لكل حالة</li>
-                    </ul>
-                    <div class="guarantee">
-                        <h4>ضمان الرضا 100%</h4>
-                        <p>إذا لم تكن راضياً عن الجلسة الأولى، استرد أموالك كاملة</p>
-                    </div>
-                </div>
+                <h2 class="section-title reality-bend">
+                    <span class="title-fragment">رحلات</span>
+                    <span class="title-fragment">نحو</span>
+                    <span class="title-fragment">التميز</span>
+                </h2>
                 
-                <div class="booking-form-container">
-                    <form class="booking-form" id="bookingForm">
-                        <input type="text" placeholder="الاسم الكامل" required>
-                        <input type="tel" placeholder="رقم الهاتف" required>
-                        <input type="email" placeholder="البريد الإلكتروني" required>
-                        <select required>
-                            <option value="">اختر نوع الاستشارة</option>
-                            <option>علاج القلق والاكتئاب</option>
-                            <option>الاستشارات الزوجية</option>
-                            <option>تطوير الذات</option>
-                            <option>الإرشاد الأسري</option>
-                        </select>
-                        <textarea placeholder="اشرح باختصار ما تحتاج إليه" rows="3"></textarea>
-                        <button type="submit" class="btn-book">احجز استشارتك الآن</button>
-                    </form>
-                    <p class="form-note">سيتم التواصل معك خلال 24 ساعة لتأكيد الموعد</p>
+                <p class="section-description neural-text">
+                    كورسات مدعومة بالذكاء الاصطناعي تتكيف مع شخصيتك وتحدياتك الفريدة
+                </p>
+            </div>
+
+            <!-- AI Course Recommendation Engine -->
+            <div class="ai-engine">
+                <div class="engine-container glass-container">
+                    <div class="ai-avatar pulsing">
+                        <div class="avatar-core">🤖</div>
+                        <div class="avatar-rings">
+                            <div class="ring ring-1"></div>
+                            <div class="ring ring-2"></div>
+                            <div class="ring ring-3"></div>
+                        </div>
+                    </div>
+                    <div class="ai-message">
+                        <div class="message-content">
+                            <h3 class="ai-title">مساعد الذكاء النفسي</h3>
+                            <p class="ai-description">دعني أساعدك في العثور على المسار المثالي لتطوير ذاتك</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-interface">
+                        <div class="recommendation-categories">
+                            <button class="category-btn active quantum-btn" data-category="transformation">
+                                <span class="btn-icon">🔄</span>
+                                <span class="btn-label">تحول شخصي</span>
+                                <div class="btn-energy"></div>
+                            </button>
+                            <button class="category-btn quantum-btn" data-category="relationships">
+                                <span class="btn-icon">💝</span>
+                                <span class="btn-label">علاقات صحية</span>
+                                <div class="btn-energy"></div>
+                            </button>
+                            <button class="category-btn quantum-btn" data-category="healing">
+                                <span class="btn-icon">🌿</span>
+                                <span class="btn-label">شفاء نفسي</span>
+                                <div class="btn-energy"></div>
+                            </button>
+                            <button class="category-btn quantum-btn" data-category="success">
+                                <span class="btn-icon">🎯</span>
+                                <span class="btn-label">تحقيق الأهداف</span>
+                                <div class="btn-energy"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revolutionary Course Showcase -->
+            <div class="courses-multiverse">
+                <!-- Flagship Course - Immersive Experience -->
+                <div class="course-dimension flagship" data-category="transformation" data-tilt>
+                    <div class="dimension-portal">
+                        <div class="portal-gateway"></div>
+                        <div class="course-universe">
+                            <div class="course-image cosmic-image">
+                                <div class="image-nebula"></div>
+                                <div class="course-icon quantum-icon">🧠</div>
+                                <div class="preview-overlay">
+                                    <button class="preview-btn holographic-btn">
+                                        <span class="btn-core">▶</span>
+                                        <span class="btn-halo">معاينة ثلاثية الأبعاد</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="course-content dimensional-content">
+                                <div class="content-matrix">
+                                    <div class="badge-system">
+                                        <span class="popularity-badge pulsing-badge">🔥 الأكثر تأثيراً</span>
+                                        <span class="ai-badge">🤖 مدعوم بالذكاء الاصطناعي</span>
+                                    </div>
+                                    
+                                    <h3 class="course-title holographic-title">
+                                        دبلوم التحليل النفسي الكمي
+                                    </h3>
+                                    
+                                    <p class="course-description dimensional-text">
+                                        برنامج ثوري يدمج تقنيات التحليل النفسي التقليدية مع الذكاء الاصطناعي والواقع الافتراضي لخلق تجربة تحول شاملة
+                                    </p>
+                                    
+                                    <!-- Advanced Features Matrix -->
+                                    <div class="features-matrix">
+                                        <div class="feature-node active">
+                                            <div class="node-icon">🎓</div>
+                                            <div class="node-text">شهادة معتمدة دولياً</div>
+                                            <div class="node-connection"></div>
+                                        </div>
+                                        <div class="feature-node">
+                                            <div class="node-icon">🎮</div>
+                                            <div class="node-text">تجارب واقع افتراضي</div>
+                                            <div class="node-connection"></div>
+                                        </div>
+                                        <div class="feature-node">
+                                            <div class="node-icon">🤖</div>
+                                            <div class="node-text">مساعد ذكي شخصي</div>
+                                            <div class="node-connection"></div>
+                                        </div>
+                                        <div class="feature-node">
+                                            <div class="node-icon">💎</div>
+                                            <div class="node-text">جلسات VIP حصرية</div>
+                                            <div class="node-connection"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Real-time Analytics -->
+                                    <div class="course-analytics">
+                                        <div class="analytics-grid">
+                                            <div class="metric hologram-metric">
+                                                <div class="metric-value">4.9</div>
+                                                <div class="metric-label">⭐ تقييم</div>
+                                                <div class="metric-bar"></div>
+                                            </div>
+                                            <div class="metric hologram-metric">
+                                                <div class="metric-value">2.5k</div>
+                                                <div class="metric-label">👥 طالب</div>
+                                                <div class="metric-bar"></div>
+                                            </div>
+                                            <div class="metric hologram-metric">
+                                                <div class="metric-value">98%</div>
+                                                <div class="metric-label">🎯 نجاح</div>
+                                                <div class="metric-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Revolutionary Pricing -->
+                                    <div class="pricing-dimension">
+                                        <div class="price-container quantum-container">
+                                            <div class="price-strike">
+                                                <span class="old-price dissolved">999 ريال</span>
+                                            </div>
+                                            <div class="price-current">
+                                                <span class="price-value glowing-text">499</span>
+                                                <span class="price-currency">ريال</span>
+                                                <div class="price-energy"></div>
+                                            </div>
+                                            <div class="discount-badge rotating-badge">
+                                                50% خصم لفترة محدودة
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="enroll-btn quantum-enroll">
+                                            <span class="btn-surface">
+                                                <span class="btn-text">انضم للرحلة</span>
+                                                <span class="btn-icon">🚀</span>
+                                            </span>
+                                            <div class="btn-quantum-field"></div>
+                                            <div class="btn-particles-system"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Revolutionary Courses -->
+                <div class="course-constellation">
+                    <div class="course-orbit course-premium" data-category="relationships">
+                        <div class="course-sphere">
+                            <div class="sphere-surface">
+                                <div class="course-icon floating-icon">💝</div>
+                            </div>
+                            <div class="sphere-content">
+                                <h4 class="course-name">العلاقات الصحية 3.0</h4>
+                                <p class="course-brief">تقنيات متقدمة لبناء علاقات مُثمرة</p>
+                                <div class="course-price">299 ريال</div>
+                            </div>
+                            <div class="orbit-trail"></div>
+                        </div>
+                    </div>
+
+                    <div class="course-orbit course-premium" data-category="healing">
+                        <div class="course-sphere">
+                            <div class="sphere-surface">
+                                <div class="course-icon floating-icon">🌿</div>
+                            </div>
+                            <div class="sphere-content">
+                                <h4 class="course-name">الشفاء الكمي</h4>
+                                <p class="course-brief">تقنيات الشفاء النفسي المتقدمة</p>
+                                <div class="course-price">199 ريال</div>
+                            </div>
+                            <div class="orbit-trail"></div>
+                        </div>
+                    </div>
+
+                    <div class="course-orbit course-premium" data-category="success">
+                        <div class="course-sphere">
+                            <div class="sphere-surface">
+                                <div class="course-icon floating-icon">🎯</div>
+                            </div>
+                            <div class="sphere-content">
+                                <h4 class="course-name">تحقيق الأهداف الكمي</h4>
+                                <p class="course-brief">منهجية علمية لتحقيق النجاح</p>
+                                <div class="course-price">149 ريال</div>
+                            </div>
+                            <div class="orbit-trail"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Revolutionary About Section -->
+    <section id="about" class="about-dimension">
+        <div class="dimension-background">
+            <div class="neural-network-bg"></div>
+        </div>
+        
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>د. عماد راشد</h3>
-                    <p>استشاري الصحة النفسية</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/dr.emad.rashad">Instagram</a>
-                        <a href="https://youtube.com/@dr.emad.rashad">YouTube</a>
-                        <a href="https://wa.me/YOUR_WHATSAPP">WhatsApp</a>
+            <div class="about-experience">
+                <div class="experience-portal">
+                    <div class="doctor-hologram">
+                        <div class="hologram-projection">
+                            <div class="doctor-avatar">
+                                <div class="avatar-glow"></div>
+                                <div class="consciousness-waves"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-dimensions">
+                        <div class="story-fragment active" data-story="origin">
+                            <h3 class="fragment-title">البداية الثورية</h3>
+                            <p class="fragment-content">رحلة تحول من طبيب تقليدي إلى رائد في دمج التكنولوجيا مع علم النفس</p>
+                        </div>
+                        
+                        <div class="story-fragment" data-story="innovation">
+                            <h3 class="fragment-title">الابتكار العلمي</h3>
+                            <p class="fragment-content">تطوير منهجيات جديدة تدمج الذكاء الاصطناعي مع العلاج النفسي</p>
+                        </div>
+                        
+                        <div class="story-fragment" data-story="impact">
+                            <h3 class="fragment-title">التأثير العالمي</h3>
+                            <p class="fragment-content">تغيير حياة أكثر من 50,000 شخص حول العالم من خلال منصات تعليمية متطورة</p>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <a href="#privacy">سياسة الخصوصية</a>
-                    <a href="#terms">الشروط والأحكام</a>
-                    <a href="#contact">تواصل معنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories in Immersive Format -->
+    <section id="testimonials" class="testimonials-universe">
+        <div class="universe-grid">
+            <div class="testimonial-constellation">
+                <div class="testimonial-star active" data-testimonial="sarah">
+                    <div class="star-core">S</div>
+                    <div class="star-story">سارة - تحول كامل في الحياة المهنية</div>
+                </div>
+                <div class="testimonial-star" data-testimonial="ahmed">
+                    <div class="star-core">A</div>
+                    <div class="star-story">أحمد - شفاء من الاكتئاب خلال شهرين</div>
+                </div>
+                <div class="testimonial-star" data-testimonial="mona">
+                    <div class="star-core">M</div>
+                    <div class="star-story">منى - إنقاذ زواج على حافة الانهيار</div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2024 د. عماد راشد - جميع الحقوق محفوظة</p>
+        </div>
+    </section>
+
+    <!-- Revolutionary Contact Section -->
+    <section id="contact" class="contact-portal">
+        <div class="portal-entrance">
+            <div class="contact-hologram">
+                <h2 class="contact-title quantum-title">ابدأ رحلة التحول</h2>
+                <p class="contact-description">انضم لآلاف الأشخاص الذين غيروا حياتهم</p>
+                
+                <div class="contact-methods">
+                    <a href="https://wa.me/+966123456789" class="contact-btn whatsapp-quantum">
+                        <span class="btn-icon">💬</span>
+                        <span class="btn-text">واتساب فوري</span>
+                        <div class="btn-energy-field"></div>
+                    </a>
+                    
+                    <a href="tel:+966123456789" class="contact-btn phone-quantum">
+                        <span class="btn-icon">📞</span>
+                        <span class="btn-text">مكالمة مجانية</span>
+                        <div class="btn-energy-field"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Footer -->
+    <footer class="quantum-footer">
+        <div class="footer-matrix">
+            <div class="footer-energy">
+                <p>&copy; 2024 د. عماد راشد - تجربة مستقبلية في التطوير النفسي</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/YOUR_WHATSAPP" class="whatsapp-float" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
-    </a>
-
+    <!-- Revolutionary Scripts -->
     <script src="script.js"></script>
+    <script>
+        // Initialize revolutionary experience
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeQuantumExperience();
+        });
+    </script>
 </body>
 </html>
