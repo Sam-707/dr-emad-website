@@ -3,222 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>د. عماد راشد - أخصائي علم النفس</title>
-    <meta name="description" content="د. عماد راشد - أخصائي علم النفس معتمد. خدمات نفسية متخصصة وبرامج تطوير ذاتي فعالة لحياة أفضل">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>د. عماد راشد | استشاري الصحة النفسية والتطوير الذاتي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+        }
+        .blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: float 8s ease-in-out infinite;
+        }
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-cairo">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/966500000000" class="whatsapp-float" target="_blank">
+        <i data-feather="message-circle"></i>
+    </a>
+
     <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">د. عماد راشد</div>
-            <ul class="nav-menu">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">خدماتي</a></li>
-                <li><a href="#about">من أنا</a></li>
-                <li><a href="#testimonials">آراء العملاء</a></li>
-                <li><a href="#contact">تواصل معي</a></li>
-            </ul>
+    <nav class="bg-white/90 backdrop-blur-lg shadow-lg py-4 sticky top-0 z-50 border-b border-purple-100">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-black gradient-text">د. عماد راشد</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#home" class="hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105">الرئيسية</a>
+                <a href="#about" class="hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105">من أنا</a>
+                <a href="#services" class="hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105">خدماتي</a>
+                <a href="#courses" class="hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105">الدورات</a>
+                <a href="#testimonials" class="hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105">آراء العملاء</a>
+                <a href="#contact" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">تواصل معي</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+                <i data-feather="menu" class="text-2xl"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>د. عماد راشد</h1>
-                <p class="subtitle">أخصائي علم النفس المعتمد - رحلتك نحو الصحة النفسية والنمو الشخصي تبدأ هنا</p>
-                
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">عميل سعيد</span>
+    <section id="home" class="py-20 hero-bg text-white relative overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="blob absolute top-20 left-20 w-32 h-32 bg-white/10" style="animation-delay: 0s;"></div>
+            <div class="blob absolute top-60 right-32 w-24 h-24 bg-white/10" style="animation-delay: 2s;"></div>
+            <div class="blob absolute bottom-20 left-1/3 w-20 h-20 bg-white/10" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="mb-6">
+                        <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+                            🧠 استشاري نفسي معتمد
+                        </span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">معدل الرضا</span>
+                    <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-tight">
+                        رحلتك نحو 
+                        <span class="block text-yellow-300">النمو النفسي</span>
+                        تبدأ هنا
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 leading-relaxed text-gray-100">
+                        مع د. عماد راشد، استشاري الطب النفسي والتطوير الذاتي. أكثر من 15 سنة خبرة في مساعدة الأشخاص لتحقيق السعادة والنجاح
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <a href="#courses" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            🎯 استكشف الدورات
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 hover:scale-105">
+                            📞 احجز استشارة
+                        </a>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">سنوات خبرة</span>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+                        <div class="text-center">
+                            <div class="stats-counter text-yellow-300">5K+</div>
+                            <p class="text-sm text-gray-200">عميل سعيد</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-counter text-yellow-300">98%</div>
+                            <p class="text-sm text-gray-200">معدل النجاح</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-counter text-yellow-300">15+</div>
+                            <p class="text-sm text-gray-200">سنة خبرة</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#contact" class="btn btn-primary">احجز جلستك الآن</a>
-                    <a href="#services" class="btn btn-outline">اطلع على خدماتي</a>
-                </div>
-            </div>
-            
-            <div class="hero-image">
-                <div style="width: 100%; max-width: 400px; height: 400px; background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; text-align: center; box-shadow: var(--shadow-large);">
-                    📸<br>صورة د. عماد راشد<br><small style="font-size: 0.9rem; opacity: 0.8;">سيتم إضافة الصورة الشخصية</small>
+                <div class="lg:w-1/2 relative" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Professional Photo Placeholder -->
+                        <div class="w-96 h-96 mx-auto bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl flex items-center justify-center border border-white/20">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">👨‍⚕️</div>
+                                <h3 class="text-2xl font-bold mb-2">د. عماد راشد</h3>
+                                <p class="text-white/80">استشاري الطب النفسي</p>
+                                <div class="mt-4 text-sm text-white/60">
+                                    سيتم إضافة الصورة الشخصية
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Cards -->
+                        <div class="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl animate-float" style="animation-delay: 1s;">
+                            <div class="text-purple-600">
+                                <i data-feather="award" class="w-8 h-8 mb-2"></i>
+                                <div class="font-bold text-sm">خبير معتمد</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl animate-float" style="animation-delay: 2s;">
+                            <div class="text-purple-600">
+                                <i data-feather="heart" class="w-8 h-8 mb-2"></i>
+                                <div class="font-bold text-sm">5000+ عميل</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">خدماتي المتخصصة</h2>
-                <p class="section-subtitle">أقدم خدمات نفسية شاملة ومبنية على أحدث الأساليب العلمية لمساعدتك في تحقيق الرفاهية النفسية</p>
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-6 gradient-text">خدماتي المتخصصة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">أقدم خدمات نفسية متكاملة تساعدك في تحقيق التوازن النفسي والنمو الشخصي</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h3 class="service-title">جلسات العلاج النفسي الفردي</h3>
-                    <p class="service-description">جلسات علاج نفسي مخصصة لمعالجة القلق، الاكتئاب، والضغوط النفسية باستخدام أحدث التقنيات العلاجية المعتمدة</p>
-                    <div class="service-price">300 ريال / جلسة</div>
-                    <a href="https://wa.me/966500000000?text=أريد حجز جلسة علاج نفسي فردي مع د. عماد" class="btn btn-primary">احجز الآن</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-3xl card-hover border border-purple-100" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="brain" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">العلاج النفسي الفردي</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">جلسات علاج فردية متخصصة لعلاج القلق، الاكتئاب، والضغوط النفسية باستخدام أحدث الأساليب العلاجية</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-3xl font-bold gradient-text">500 ريال</span>
+                        <a href="https://wa.me/966500000000?text=أريد حجز جلسة علاج نفسي فردي" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            احجز الآن
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">👥</div>
-                    <h3 class="service-title">العلاج الأسري والزواجي</h3>
-                    <p class="service-description">جلسات متخصصة لحل المشاكل الأسرية وتحسين التواصل بين الأزواج وأفراد الأسرة</p>
-                    <div class="service-price">400 ريال / جلسة</div>
-                    <a href="https://wa.me/966500000000?text=أريد حجز جلسة علاج أسري مع د. عماد" class="btn btn-primary">احجز الآن</a>
+                <!-- Service 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-3xl card-hover border border-teal-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="users" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">العلاج الأسري والزواجي</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">جلسات متخصصة لحل المشاكل الأسرية وتحسين التواصل بين الأزواج وأفراد العائلة</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-3xl font-bold gradient-text">700 ريال</span>
+                        <a href="https://wa.me/966500000000?text=أريد حجز جلسة علاج أسري" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            احجز الآن
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3 class="service-title">برامج التطوير الشخصي</h3>
-                    <p class="service-description">برامج تدريبية شاملة لتطوير الذات، بناء الثقة، وتحقيق الأهداف الشخصية والمهنية</p>
-                    <div class="service-price">من 500 ريال</div>
-                    <a href="https://wa.me/966500000000?text=أريد معرفة المزيد عن برامج التطوير الشخصي" class="btn btn-primary">اطلع على البرامج</a>
+                <!-- Service 3 -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-3xl card-hover border border-orange-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="trending-up" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">برامج التطوير الشخصي</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">برامج شاملة لتطوير الذات، بناء الثقة، وتحقيق الأهداف الشخصية والمهنية</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-3xl font-bold gradient-text">من 800 ريال</span>
+                        <a href="https://wa.me/966500000000?text=أريد معرفة المزيد عن برامج التطوير الشخصي" class="bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            اعرف أكثر
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="section about-section" id="about">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">من أنا</h2>
-                <p class="section-subtitle">التعرف على خبرتي ومؤهلاتي في مجال علم النفس</p>
-            </div>
-            
-            <div class="about-content">
-                <div>
-                    <p class="about-text">
-                        د. عماد راشد، أخصائي علم النفس المعتمد مع أكثر من 5 سنوات من الخبرة في تقديم الخدمات النفسية والاستشارية. 
-                        حصلت على درجة الدكتوراه في علم النفس الإكلينيكي وأتخصص في علاج اضطرابات القلق، الاكتئاب، والضغوط النفسية.
-                    </p>
-                    
-                    <p class="about-text">
-                        أؤمن بأهمية تقديم الرعاية النفسية الشاملة والمبنية على الأدلة العلمية. أعمل مع كل عميل بشكل فردي لوضع خطة علاجية 
-                        مناسبة تساعده في تحقيق أهدافه وتحسين جودة حياته.
-                    </p>
-                    
-                    <div class="credentials">
-                        <div class="credential">
-                            <div class="credential-icon">🎓</div>
-                            <span>دكتوراه في علم النفس الإكلينيكي - جامعة الملك سعود</span>
-                        </div>
-                        <div class="credential">
-                            <div class="credential-icon">🏆</div>
-                            <span>عضو الجمعية السعودية لعلم النفس</span>
-                        </div>
-                        <div class="credential">
-                            <div class="credential-icon">📋</div>
-                            <span>ترخيص ممارسة من وزارة الصحة السعودية</span>
-                        </div>
-                        <div class="credential">
-                            <div class="credential-icon">💡</div>
-                            <span>متخصص في العلاج المعرفي السلوكي CBT</span>
+    <section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <!-- Professional Photo Placeholder -->
+                    <div class="w-full h-96 bg-white rounded-3xl shadow-2xl flex items-center justify-center border border-purple-100">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">🏥</div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">مكتب د. عماد راشد</h3>
+                            <p class="text-gray-600">بيئة مريحة وآمنة للعلاج</p>
+                            <div class="mt-4 text-sm text-gray-500">
+                                سيتم إضافة صورة المكتب
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="hero-image">
-                    <div style="width: 100%; max-width: 400px; height: 400px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 2px solid #2563eb; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #2563eb; font-size: 1.2rem; text-align: center; box-shadow: var(--shadow-large);">
-                        🏥<br>مكتب د. عماد راشد<br><small style="font-size: 0.9rem; opacity: 0.8;">سيتم إضافة صورة المكتب</small>
+                <div data-aos="fade-left">
+                    <h2 class="text-5xl font-black mb-8 gradient-text">لماذا د. عماد راشد؟</h2>
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                        استشاري الطب النفسي المعتمد مع أكثر من 15 سنة من الخبرة في مساعدة الأشخاص على تحقيق التوازن النفسي والسعادة
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start space-x-4 space-x-reverse">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="award" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">خبرة 15+ سنة</h4>
+                                <p class="text-gray-600">دكتوراه في الطب النفسي من أفضل الجامعات</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 space-x-reverse">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="check-circle" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">نسبة نجاح 98%</h4>
+                                <p class="text-gray-600">أكثر من 5000 حالة تم علاجها بنجاح</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 space-x-reverse">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="heart" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">نهج شامل</h4>
+                                <p class="text-gray-600">علاج متكامل يجمع بين الطب النفسي والتطوير الذاتي</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 inline-block">
+                        احجز استشارة مجانية 🎯
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-6 gradient-text">الدورات التحويلية</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">برامج تدريبية متطورة تساعدك في إحداث تغيير جذري في حياتك</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Course 1 -->
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 card-hover border border-purple-100" data-aos="fade-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4">
+                            <i data-feather="zap" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">🔥 الأكثر طلباً</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-2">إتقان الذكاء العاطفي</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        تعلم كيفية فهم وإدارة مشاعرك والتعامل مع الآخرين بذكاء عاطفي عالي. دورة شاملة تغير نظرتك للحياة
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>8 جلسات تدريبية مكثفة</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>مواد تدريبية حصرية</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>متابعة شخصية من د. عماد</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-4xl font-black gradient-text">1,200 ريال</span>
+                            <span class="block text-sm text-gray-500 line-through">1,800 ريال</span>
+                        </div>
+                        <a href="https://wa.me/966500000000?text=أريد الالتحاق بدورة إتقان الذكاء العاطفي" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 font-bold">
+                            سجل الآن 🚀
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-8 card-hover border border-teal-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mr-4">
+                            <i data-feather="heart" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <span class="bg-teal-100 text-teal-600 px-3 py-1 rounded-full text-sm font-medium">💝 للعلاقات</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-2">فن العلاقات الناجحة</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        اكتشف أسرار بناء علاقات قوية ومستدامة مع الشريك، الأصدقاء، والعائلة. دورة تحويلية في فن التواصل
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>6 جلسات تفاعلية</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>تمارين عملية وتطبيقات</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>شهادة معتمدة</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-4xl font-black gradient-text">900 ريال</span>
+                        </div>
+                        <a href="https://wa.me/966500000000?text=أريد الالتحاق بدورة فن العلاقات الناجحة" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 font-bold">
+                            سجل الآن 💝
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section" id="testimonials">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">آراء العملاء</h2>
-                <p class="section-subtitle">شاهد تجارب عملائي مع خدماتي النفسية والاستشارية</p>
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-6 gradient-text">قصص نجاح ملهمة</h2>
+                <p class="text-xl text-gray-600">شاهد كيف غيرت خدماتي حياة عملائي</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        د. عماد ساعدني كثيراً في التغلب على نوبات القلق التي كنت أعاني منها. أسلوبه المهني والمتفهم جعلني أشعر بالراحة منذ الجلسة الأولى.
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover" data-aos="fade-up">
+                    <div class="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-6 leading-relaxed italic">
+                        "د. عماد غير حياتي تماماً. بفضل دورة الذكاء العاطفي، أصبحت أفهم نفسي وأتعامل مع الضغوط بطريقة أفضل بكثير"
                     </p>
-                    <div class="testimonial-author">- سارة أ.</div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            س
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">سارة أحمد</h4>
+                            <p class="text-sm text-gray-500">مهندسة، الرياض</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        جلسات العلاج الأسري مع د. عماد أنقذت زواجي. تعلمنا كيف نتواصل بشكل أفضل وحلّينا مشاكلنا بطريقة صحية وإيجابية.
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-6 leading-relaxed italic">
+                        "الجلسات مع د. عماد ساعدتني في التغلب على القلق والاكتئاب. أنصح كل شخص يمر بصعوبات نفسية بالتواصل معه"
                     </p>
-                    <div class="testimonial-author">- أحمد م.</div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            م
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">محمد علي</h4>
+                            <p class="text-sm text-gray-500">معلم، جدة</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        برنامج التطوير الشخصي غيّر حياتي تماماً. أصبحت أكثر ثقة بنفسي وقدرت أحقق أهدافي المهنية والشخصية. شكراً د. عماد.
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 mb-6 leading-relaxed italic">
+                        "دورة العلاقات الناجحة أنقذت زواجي. تعلمت كيف أتواصل مع زوجي بطريقة صحية وإيجابية. شكراً د. عماد"
                     </p>
-                    <div class="testimonial-author">- منى س.</div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-red-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            ف
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">فاطمة محمد</h4>
+                            <p class="text-sm text-gray-500">طبيبة، الدمام</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section contact-section" id="contact">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">ابدأ رحلتك نحو الصحة النفسية</h2>
-                <p class="section-subtitle">تواصل معي اليوم لحجز جلستك الأولى أو للاستفسار عن خدماتي</p>
+    <section id="contact" class="py-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-6">ابدأ رحلة التغيير اليوم</h2>
+                <p class="text-xl max-w-3xl mx-auto">تواصل معي الآن واحجز استشارتك الأولى. أول خطوة نحو حياة أفضل تبدأ من هنا</p>
             </div>
             
-            <div class="contact-buttons">
-                <a href="https://wa.me/966500000000?text=مرحباً د. عماد، أريد حجز جلسة استشارة نفسية" class="btn">💬 تواصل عبر الواتساب</a>
-                <a href="tel:+966500000000" class="btn">📞 اتصل بي مباشرة</a>
-                <a href="mailto:dr.emad@email.com" class="btn">✉️ راسلني إلكترونياً</a>
-            </div>
-            
-            <div style="margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px;">
-                <h3 style="margin-bottom: 1rem;">معلومات العيادة</h3>
-                <p>📍 الرياض، المملكة العربية السعودية</p>
-                <p>🕒 السبت - الخميس: 9:00 صباحاً - 8:00 مساءً</p>
-                <p>💡 جلسات أونلاين متاحة</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-3xl font-bold mb-8">طرق التواصل</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i data-feather="message-circle" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">واتساب</h4>
+                                <p class="text-white/80">+966 500 000 000</p>
+                                <a href="https://wa.me/966500000000" class="text-yellow-300 hover:text-yellow-200 transition-colors">تواصل فوري</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i data-feather="mail" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">البريد الإلكتروني</h4>
+                                <p class="text-white/80">dr.emad@email.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 space-x-reverse">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i data-feather="map-pin" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold">العيادة</h4>
+                                <p class="text-white/80">الرياض، المملكة العربية السعودية</p>
+                                <p class="text-white/60 text-sm">السبت - الخميس: 9:00 ص - 8:00 م</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
+                        <h3 class="text-3xl font-bold mb-6">احجز استشارة مجانية</h3>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="الاسم الكامل" class="w-full px-6 py-4 rounded-2xl bg-white/20 border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                            <input type="tel" placeholder="رقم الجوال" class="w-full px-6 py-4 rounded-2xl bg-white/20 border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+                            <textarea placeholder="اكتب رسالتك أو ما تريد التحدث عنه..." rows="4" class="w-full px-6 py-4 rounded-2xl bg-white/20 border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"></textarea>
+                            <button class="w-full bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                                إرسال الطلب 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <!-- Note for Dr. Emad -->
-    <div style="position: fixed; bottom: 20px; left: 20px; background: #2563eb; color: white; padding: 1rem; border-radius: 10px; font-size: 0.9rem; max-width: 300px; box-shadow: var(--shadow-large); z-index: 1000;" id="photo-note">
-        <strong>ملاحظة لد. عماد:</strong><br>
-        يرجى إضافة صورتك الشخصية وصورة المكتب لإكمال الموقع.<br>
-        <button onclick="document.getElementById('photo-note').style.display='none'" style="background: white; color: #2563eb; border: none; padding: 0.5rem 1rem; border-radius: 5px; margin-top: 0.5rem; cursor: pointer;">فهمت ✓</button>
-    </div>
-
-    <footer>
-        <div class="section-container">
-            <p>&copy; 2024 د. عماد راشد - أخصائي علم النفس المعتمد. جميع الحقوق محفوظة.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.8;">ترخيص وزارة الصحة رقم: PSY-2024-001</p>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-black gradient-text mb-4">د. عماد راشد</h3>
+            <p class="text-gray-400 mb-6">استشاري الطب النفسي والتطوير الذاتي</p>
+            <div class="flex justify-center space-x-6 space-x-reverse mb-8">
+                <a href="https://wa.me/966500000000" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                    <i data-feather="message-circle" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                    <i data-feather="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                    <i data-feather="youtube" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-gray-500">© 2024 د. عماد راشد - جميع الحقوق محفوظة</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('menu-btn')?.addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        });
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -232,27 +588,41 @@
             });
         });
 
-        // Add active class to nav items on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
+        // Counter Animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stats-counter');
+                    counters.forEach(counter => {
+                        const target = counter.textContent;
+                        const num = parseInt(target.replace(/[^\d]/g, ''));
+                        let current = 0;
+                        const increment = num / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= num) {
+                                counter.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                const suffix = target.replace(/[\d]/g, '');
+                                counter.textContent = Math.floor(current) + suffix;
+                            }
+                        }, 40);
+                    });
+                    observer.unobserve(entry.target);
                 }
             });
-        });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.hero-bg');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
     </script>
 </body>
 </html>
